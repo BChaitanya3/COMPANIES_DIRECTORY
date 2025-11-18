@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 
 // Configuration: mock API base
-const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000';
+const API_BASE = process.env.REACT_APP_API_BASE || 'https://companies-directory-kappa.vercel.app';
 
 function App(){
   const [companies, setCompanies] = useState([]);

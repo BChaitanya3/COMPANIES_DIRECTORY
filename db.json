@@ -1,0 +1,15 @@
+
+{
+  "companies": [
+    {"id": 1, "name": "Aster Labs", "industry": "Healthcare", "location": "Bengaluru, India", "size": "51-200", "rating": 4.2},
+    {"id": 2, "name": "BluePeak Solutions", "industry": "Software", "location": "Hyderabad, India", "size": "201-500", "rating": 4.5},
+    {"id": 3, "name": "Crest Manufacturing", "industry": "Manufacturing", "location": "Pune, India", "size": "501-1000", "rating": 3.9},
+    {"id": 4, "name": "Delta Finance", "industry": "Finance", "location": "Mumbai, India", "size": "11-50", "rating": 4.0},
+    {"id": 5, "name": "Echo Retail", "industry": "Retail", "location": "Chennai, India", "size": "1001-5000", "rating": 3.6},
+    {"id": 6, "name": "FluxAI", "industry": "Software", "location": "Bengaluru, India", "size": "1-10", "rating": 4.8},
+    {"id": 7, "name": "Green Energy Co.", "industry": "Energy", "location": "Delhi, India", "size": "201-500", "rating": 4.1},
+    {"id": 8, "name": "Helix Pharma", "industry": "Healthcare", "location": "Hyderabad, India", "size": "501-1000", "rating": 4.3},
+    {"id": 9, "name": "IOTA Logistics", "industry": "Logistics", "location": "Kolkata, India", "size": "201-500", "rating": 3.8},
+    {"id": 10, "name": "Jupiter Media", "industry": "Media", "location": "Bengaluru, India", "size": "51-200", "rating": 4.0}
+  ]
+}

@@ -61,8 +61,11 @@ function App(){
   },[companies,q,industry,location]);
 
   // pagination
+  // const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  // useEffect(()=>{ if(page > totalPages) setPage(1); },[totalPages]);
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  useEffect(()=>{ if(page > totalPages) setPage(1); },[totalPages]);
+  useEffect(()=>{ if(page > totalPages) setPage(1); },[page, totalPages]);
+
   const pageItems = useMemo(()=>{
     const start = (page-1)*pageSize;
     return filtered.slice(start, start+pageSize);

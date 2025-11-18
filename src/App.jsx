@@ -1,9 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
 
 // Configuration: API base - works with any server deployment
-// In production, use relative path; in development, use full URL
-const API_BASE = process.env.REACT_APP_API_BASE || 
-  (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api')
+// Check if running on localhost (development) or deployed (production)
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE = process.env.REACT_APP_API_BASE || (isLocalhost ? 'http://localhost:5000/api' : '/api')
 function App(){
   const [companies, setCompanies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -62,11 +62,8 @@ function App(){
   },[companies,q,industry,location]);
 
   // pagination
-  // const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  // useEffect(()=>{ if(page > totalPages) setPage(1); },[totalPages]);
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  useEffect(()=>{ if(page > totalPages) setPage(1); },[page, totalPages]);
-
+  useEffect(()=>{ if(page > totalPages) setPage(1); },[totalPages, page]);
   const pageItems = useMemo(()=>{
     const start = (page-1)*pageSize;
     return filtered.slice(start, start+pageSize);

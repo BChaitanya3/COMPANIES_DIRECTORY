@@ -1,8 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
 
-// Configuration: mock API base
-const API_BASE = process.env.REACT_APP_API_BASE || 'https://companies-directory-kappa.vercel.app';
-
+// Configuration: API base - works with any server deployment
+// In production, use relative path; in development, use full URL
+const API_BASE = process.env.REACT_APP_API_BASE || 
+  (process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api')
 function App(){
   const [companies, setCompanies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -99,7 +100,7 @@ function App(){
       </div>
 
       {loading && <div className="loading">Loading companies...</div>}
-      {error && <div className="error">{error}. If you're running locally, start the mock API: <code>npm run mock-api</code></div>}
+      {error && <div className="error">{error}. If you're running locally, use: <code>npm run dev</code></div>}
 
       {!loading && !error && (
         <>
